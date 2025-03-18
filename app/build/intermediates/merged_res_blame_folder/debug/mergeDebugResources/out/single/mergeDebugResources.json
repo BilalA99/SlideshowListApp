@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.slideshowapp-main-55:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_image3.jpg.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/image3.jpg"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_image4.jpg.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/image4.jpg"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/xml_backup_rules.xml.flat",
+        "source": "com.example.slideshowapp-main-55:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_image2.jpg.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/image2.jpg"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_image5.jpg.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/image5.jpg"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_image1.jpg.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/image1.jpg"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.slideshowapp-main-55:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.slideshowapp-debug-53:/drawable_image6.jpg.flat",
+        "source": "com.example.slideshowapp-main-55:/drawable/image6.jpg"
+    }
+]
