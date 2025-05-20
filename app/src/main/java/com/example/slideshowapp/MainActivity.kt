@@ -5,16 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.text.input.KeyboardType
 import com.example.slideshowapp.ui.theme.SlideshowAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,118 +22,80 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SlideshowAppTheme {
-                SlideshowScreen()
+                SlideListScreen()
             }
         }
     }
 }
 
 @Composable
-fun SlideshowScreen() {
-    var currentIndex by remember { mutableIntStateOf(0) }
-    var textInput by remember { mutableStateOf("") }
-
-    SlideshowContent(
-        currentIndex = currentIndex,
-        textInput = textInput,
-        onNext = { currentIndex = (currentIndex + 1) % 6 }, // cycles through all 6 images
-        onBack = { currentIndex = if (currentIndex == 0) 5 else currentIndex - 1 },
-        onGo = { inputIndex ->
-            if (inputIndex in 1..6) {
-                currentIndex = inputIndex - 1
-            }
-        },
-        onTextInputChange = { textInput = it }
-    )
-}
-
-@Composable
-fun SlideshowContent(
-    currentIndex: Int,
-    textInput: String,
-    onNext: () -> Unit,
-    onBack: () -> Unit,
-    onGo: (Int) -> Unit,
-    onTextInputChange: (String) -> Unit
-) {
-    val images = listOf(
-        R.drawable.image1, R.drawable.image2, R.drawable.image3,
-        R.drawable.image4, R.drawable.image5, R.drawable.image6
+fun SlideListScreen() {
+    val slideItems = listOf(
+        SlideItem(R.drawable.image1, stringResource(R.string.caption_1)),
+        SlideItem(R.drawable.image2, stringResource(R.string.caption_2)),
+        SlideItem(R.drawable.image3, stringResource(R.string.caption_3)),
+        SlideItem(R.drawable.image4, stringResource(R.string.caption_4)),
+        SlideItem(R.drawable.image5, stringResource(R.string.caption_5)),
+        SlideItem(R.drawable.image6, stringResource(R.string.caption_6)),
+        SlideItem(R.drawable.image7, stringResource(R.string.caption_7)),
+        SlideItem(R.drawable.image8, stringResource(R.string.caption_8)),
+        SlideItem(R.drawable.image9, stringResource(R.string.caption_9)),
+        SlideItem(R.drawable.image10, stringResource(R.string.caption_10))
     )
 
-    val captions = listOf(
-        stringResource(R.string.caption_1),
-        stringResource(R.string.caption_2),
-        stringResource(R.string.caption_3),
-        stringResource(R.string.caption_4),
-        stringResource(R.string.caption_5),
-        stringResource(R.string.caption_6)
-    )
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Image(
-            painter = painterResource(id = images[currentIndex]),
-            contentDescription = null,
-            modifier = Modifier
-                .size(300.dp)
-                .padding(16.dp)
-        )
-
-        Text(
-            text = captions[currentIndex],
-            style = MaterialTheme.typography.bodyLarge
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        OutlinedTextField(
-            value = textInput,
-            onValueChange = onTextInputChange,
-            label = { Text(stringResource(R.string.enter_picture_number)) },
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
-        )
-
-        Button(onClick = { onGo(textInput.toIntOrNull() ?: -1) }) {
-            Text(stringResource(R.string.go_button))
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Row {
-            Button(onClick = onBack) {
-                Text(stringResource(R.string.back_button))
-            }
-
-            Spacer(modifier = Modifier.width(16.dp))
-
-            Button(onClick = onNext) {
-                Text(stringResource(R.string.next_button))
-            }
+        items(slideItems.size) { index ->
+            SlideItemCard(slideItems[index])
         }
     }
 }
 
-@Preview(name = "Interactive Mode", showBackground = true)
 @Composable
-fun PreviewSlideshowScreen() {
-    var currentIndex by remember { mutableIntStateOf(0) }
-    var textInput by remember { mutableStateOf("") }
-
-    SlideshowAppTheme {
-        SlideshowContent(
-            currentIndex = currentIndex,
-            textInput = textInput,
-            onNext = { currentIndex = (currentIndex + 1) % 6 },
-            onBack = { currentIndex = if (currentIndex == 0) 5 else currentIndex - 1 },
-            onGo = { inputIndex ->
-                if (inputIndex in 1..6) {
-                    currentIndex = inputIndex - 1
-                }
-            },
-            onTextInputChange = { textInput = it }
-        )
+fun SlideItemCard(item: SlideItem) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+        shape = MaterialTheme.shapes.medium
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = item.imageResId),
+                contentDescription = item.caption,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(240.dp),
+                contentScale = ContentScale.Crop
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            Text(
+                text = item.caption,
+                style = MaterialTheme.typography.titleMedium,
+                textAlign = TextAlign.Center
+            )
+        }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewSlideListScreen() {
+    SlideshowAppTheme {
+        SlideListScreen()
+    }
+}
+
+
+data class SlideItem(
+    val imageResId: Int,
+    val caption: String
+)

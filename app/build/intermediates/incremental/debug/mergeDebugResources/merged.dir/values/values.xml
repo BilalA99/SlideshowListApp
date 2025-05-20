@@ -323,11 +323,15 @@
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
     <string name="caption_1">Caption for Image 1</string>
+    <string name="caption_10">Caption for Image 10</string>
     <string name="caption_2">Caption for Image 2</string>
     <string name="caption_3">Caption for Image 3</string>
     <string name="caption_4">Caption for Image 4</string>
     <string name="caption_5">Caption for Image 5</string>
     <string name="caption_6">Caption for Image 6</string>
+    <string name="caption_7">Caption for Image 7</string>
+    <string name="caption_8">Caption for Image 8</string>
+    <string name="caption_9">Caption for Image 9</string>
     <string name="close_drawer">"Close navigation menu"</string>
     <string name="close_sheet">"Close sheet"</string>
     <string name="default_error_message">"Invalid input"</string>
